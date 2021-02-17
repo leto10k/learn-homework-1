@@ -10,12 +10,21 @@
 * Посчитать и вывести средний балл по каждому классу.
 """
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+marks = [{'school_class': '4a', 'scores': [3,4,4,5,2]},
+        {'school_class': '7a', 'scores': [5,3,4,3,2]},
+        {'school_class': '10b', 'scores': [4,2,5,5,3]},
+        {'school_class': '1a', 'scores': [5,5,5,5,5]},
+        {'school_class': '9b', 'scores': [3,2,2,3,2]},]
+
+def main(marks):
+
+    srednii_ball = 0
+
+    for i in marks:
+        print(f"Среднией балл класса {i['school_class']}: {sum(i['scores'])/len(i['scores'])}")
+        srednii_ball += sum(i['scores'])/len(i['scores'])
+
+    print(f"Средний балл по  всей школе: {srednii_ball / len(marks)}")
     
 if __name__ == "__main__":
-    main()
+    main(marks)
